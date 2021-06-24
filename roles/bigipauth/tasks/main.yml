@@ -12,7 +12,7 @@
       password: "{{ ansible_ssh_pass }}"
     body_format: json
   register: authtoken
-  delegate_to: localhost
+  delegate_to: "{{ bigip }}"
 
 - name: Set the token fact if authentication succeeded
   set_fact:
