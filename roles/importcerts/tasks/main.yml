@@ -7,7 +7,8 @@
     method: POST
     headers:
       X-F5-Auth-Token: "{{ f5_auth_token }}"
-    body: "{{ lookup('template','files/ca.crt', split_lines=False )}}"
+    body_format: json
+    body: "{{ lookup('template','templates/import_crtl.j2', split_lines=False )}}"
     validate_certs: false
   delegate_to: localhost
   ignore_errors: true  
