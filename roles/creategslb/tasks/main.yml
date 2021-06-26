@@ -17,4 +17,4 @@
     headers:
       X-F5-Auth-Token: "{{ f5_auth_token }}"
     validate_certs: false
-  delegate_to: localhost
+  delegate_to: "{{ bigip }}"
