@@ -7,7 +7,9 @@
     method: POST
     timeout: 120
     validate_certs: false
-
+    body:
+      username: "{{ pb_username }}"
+      password: "{{ pb_password }}"
     body_format: json
   register: authtoken
   delegate_to: "{{ bigip }}"
