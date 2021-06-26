@@ -1,0 +1,10 @@
+---
+# tasks file for importcerts
+
+- name: Import CERT
+  bigip_ssl_certificate:
+    name: "ca.f5lab.local"
+    state: present
+    content: "{{ lookup('file','files/ca.crt', split_lines=False ) }}"
+    provider: "{{ provider }}"
+  delegate_to: "{{ bigip }}" 
