@@ -1,5 +1,5 @@
 - name: Create PUA LDAP Virtual Server and DNS
-  hosts: bigips
+  hosts: localhost
   connection: local
   gather_facts: no
 
