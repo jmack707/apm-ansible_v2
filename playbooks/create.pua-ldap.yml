@@ -49,6 +49,12 @@
         partition_name: Common
         path_name: Shared
         bigip: 10.1.1.4
+    
+    - name: Import CA Cert
+      include_role: 
+        name: importcerts
+      vars:
+        bigip: 10.1.1.4
 
     - name: Create PUA Webtop
       include_role:
