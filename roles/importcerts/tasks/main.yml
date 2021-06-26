@@ -3,7 +3,7 @@
 
 - name: Set Cert as Variable
   set_fact:
-    template_cert: "{{ lookup('template','files/{{import_crt_file}}.j2', split_lines=False )}}"
+    template_cert: "{{ lookup('template','files/{{import_crt_file}}', split_lines=False )}}"
 
 - name: Import CERT
   uri:
