@@ -1,6 +1,10 @@
 ---
 # tasks file for importcerts
 
+- name: Set Cert as Variable
+  set_fact:
+    template_cert: "{{ lookup('template','files/{{import_crt}}.j2', split_lines=False )}}"
+
 - name: Import CERT
   uri:
     url: https://{{bigip}}/mgmt/tm/sys/crypto/cert

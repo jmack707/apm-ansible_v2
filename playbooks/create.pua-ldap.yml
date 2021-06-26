@@ -54,6 +54,7 @@
       include_role: 
         name: importcerts
       vars:
+        import_cert: ca.f5lab.local.crt
         bigip: 10.1.1.4
 
     - name: Create PUA Webtop
