@@ -1,7 +1,7 @@
 ---
 # vars file for importcerts
-
-f5lab-local: "-----BEGIN CERTIFICATE-----
+vars:
+  f5lab-local: "-----BEGIN CERTIFICATE-----
 MIIDazCCAlOgAwIBAgIQJ4DA+pop3K9HGUl4CIxjbjANBgkqhkiG9w0BAQsFADBI
 MRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFTATBgoJkiaJk/IsZAEZFgVmNWxhYjEY
 MBYGA1UEAxMPZGMxLmY1bGFiLmxvY2FsMB4XDTE5MTEyMDIyMDc0NVoXDTI5MTEy
