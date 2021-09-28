@@ -6,6 +6,8 @@
     url: https://{{bigip}}/mgmt/shared/file-transfer/uploads/{{cert_name}}
     method: POST
     src: files/{{cert_name}}
+    headers:
+      X-F5-Auth-Token: "{{ f5_auth_token }}"    
     validate_certs: false
   delegate_to: localhost
   ignore_errors: true  
