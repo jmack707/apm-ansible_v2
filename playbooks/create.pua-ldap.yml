@@ -50,16 +50,16 @@
         path_name: Shared
         bigip: 10.1.1.4
 
-    - name: Import CA Cert
+    - name: Install CA Cert
       include_role: 
-        name: importcerts
+        name: installcerts
       vars:
         certificate_name: ca.f5lab.local
         bigip: 10.1.1.4
 
-    - name: Install CA Cert
+    - name: Import CA Cert
       include_role: 
-        name: installcerts
+        name: importcerts
       vars:
         certificate_name: ca.f5lab.local
         bigip: 10.1.1.4
