@@ -11,7 +11,7 @@
       "Shared": {
         "class": "Application",
         "template": "shared",
-        "ca.f5lab.local": {
+        "ca.f5lab.local.rt": {
             "class": "Certificate",
             "certificate": "{{ lookup('template','files/ca.f5lab.local.crt', split_lines=False )}}",
                 "passphrase": {
@@ -19,7 +19,13 @@
                   "protected": "eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0"
                 }
             }
-          }
+          },
+        "ca.f5lab.local": {
+          "class": "TLS_Server",
+          "certificates": [{
+            "certificate": "ca.f5lab.local.rt"
+          }]
+        },
         }
      }
  
