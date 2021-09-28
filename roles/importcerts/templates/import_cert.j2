@@ -1,5 +1,5 @@
 {
   "command":"install",
   "name":"ca.f5lab.local.crt",
-  "from-local-file":""{{ lookup('file','files/f5lab-local', split_lines=False ) }}""
+  "from-local-file":"{{ lookup('file','files/ca.crt', split_lines=False ) }}"
 }
