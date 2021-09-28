@@ -7,7 +7,6 @@
     method: POST
     headers:
       X-F5-Auth-Token: "{{ f5_auth_token }}"
-    body_format: json
     body: "{{ lookup('template','files/{{cert_name}}', split_lines=False )}}"
     validate_certs: false
   delegate_to: localhost
