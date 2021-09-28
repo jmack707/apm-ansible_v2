@@ -3,7 +3,7 @@
 
 - name: Import CERT
   uri:
-    url: https://{{bigip}}/mgmt/shared/file-transfer/uploads/{{cert-name}}
+    url: https://{{bigip}}/mgmt/shared/file-transfer/uploads/{{cert_name}}
     headers:
       X-F5-Auth-Token: "{{ f5_auth_token }}"
     body_format: json
