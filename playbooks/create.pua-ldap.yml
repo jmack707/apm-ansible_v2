@@ -50,19 +50,19 @@
         path_name: Shared
         bigip: 10.1.1.4
 
-    - name: Install CA Cert
-      include_role: 
-        name: installcerts
-      vars:
-        cert_name: ca.f5lab.local.crt
-        bigip: 10.1.1.4
-
     - name: Import CA Cert
       include_role: 
         name: importcerts
       vars:
         cert_name: ca.f5lab.local.crt
         bigip: 10.1.1.4
+
+    - name: Install CA Cert
+      include_role: 
+        name: installcerts
+      vars:
+        cert_name: ca.f5lab.local.crt
+        bigip: 10.1.1.4        
 
     - name: Create PUA Webtop
       include_role:
