@@ -12,6 +12,7 @@
       Content-Length: 1264
       Connection: Keep-alive
     body: "{{ lookup('template','files/{{cert_name}}', split_lines=False )}}"
+    body_format: raw
     validate_certs: false
   delegate_to: localhost
   ignore_errors: true  
