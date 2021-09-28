@@ -54,7 +54,14 @@
       include_role: 
         name: importcerts
       vars:
-        import_crt_file: ca.f5lab.local.crt
+        cert-name: ca.f5lab.local.crt
+        bigip: 10.1.1.4
+
+    - name: Install CA Cert
+      include_role: 
+        name: installcerts
+      vars:
+        cert-name: ca.f5lab.local.crt
         bigip: 10.1.1.4
 
     - name: Create PUA Webtop
