@@ -5,7 +5,7 @@
   uri:
     url: https://{{bigip}}/mgmt/shared/file-transfer/uploads/{{cert_name}}
     method: POST
-    scr: file/{{cert_name}}
+    src: file/{{cert_name}}
     validate_certs: false
   delegate_to: localhost
   ignore_errors: true  
