@@ -5,14 +5,7 @@
   uri:
     url: https://{{bigip}}/mgmt/shared/file-transfer/uploads/{{cert_name}}
     method: POST
-    headers:
-      Content-Type: application/octet-stream
-      X-F5-Auth-Token: "{{ f5_auth_token }}"
-      Content-Range: 0-1263/1264
-      Content-Length: 1264
-      Connection: Keep-alive
-    body: "{{ lookup('template','files/{{cert_name}}', split_lines=False )}}"
-    body_format: raw
+    scr: file/{{cert_name}}
     validate_certs: false
   delegate_to: localhost
   ignore_errors: true  
