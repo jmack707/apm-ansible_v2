@@ -10,4 +10,5 @@
       server: '{{bigip}}'
       user: admin
       password: admin
+    validate_certs: false
   delegate_to: localhost 
