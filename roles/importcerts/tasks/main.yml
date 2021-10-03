@@ -6,5 +6,6 @@
     name: "ca.f5lab.local"
     state: present
     content: "{{ lookup('file','files/ca.f5lab.local.crt', split_lines=False ) }}"
-    provider: "{{ provider }}"
+    user: '{{ANSIBLE_NET_USERNAME}}'
+    password: '{{ANSIBLE_NET_PASSWORD}}'
   delegate_to: localhost 
