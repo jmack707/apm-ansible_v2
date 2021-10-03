@@ -8,7 +8,7 @@
     content: "{{ lookup('file','files/ca.f5lab.local.crt', split_lines=False ) }}"
     provider:
       server: '{{bigip}}'
-      user: "{{ ansible_user }}"
-      password: "{{ ansible_ssh_pass }}"
+      user: admin
+      password: admin
       validate_certs: false
   delegate_to: localhost 
