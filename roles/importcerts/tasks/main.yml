@@ -6,6 +6,8 @@
     name: "ca.f5lab.local"
     state: present
     content: "{{ lookup('file','files/ca.f5lab.local.crt', split_lines=False ) }}"
-    user: admin
-    password: admin
+    provider:
+      server: {{bigip}}
+      user: admin
+      password: admin
   delegate_to: localhost 
