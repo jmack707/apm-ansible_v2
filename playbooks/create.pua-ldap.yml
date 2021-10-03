@@ -93,7 +93,7 @@
         gslb:
           - name: webtop.acme.com
             port: 443
-            ipaddress: "{{webtop_address}}"
+            ipaddress: '{{webtop_address}}'
           - name: LDAP.f5lab.local
             port: 389
             ipaddress: 10.1.20.104
