@@ -22,10 +22,6 @@
       set_fact:
         webtop_address: "{{ scope_result }}"
     
-    - name: Print wetop address
-      ansible.builtin.debug:
-        msg: {{ webtop_address }}
-
     - name: GET BIGIP-1 AUTH Token
       include_role:
         name: bigipauth
