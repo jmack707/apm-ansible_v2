@@ -90,8 +90,9 @@
         name: creategslbvs
       vars:
         bigip: 10.1.1.11
-      loop: 
-          - {name: 'webtop.acme.com', port: '443',ipaddress: '10.1.10.100'}
+        name: webtop.acme.com
+        port: 443
+        ipaddress: 10.1.10.100
   
 
     - name: Create DNS Wide IPs
