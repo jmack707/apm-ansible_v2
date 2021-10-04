@@ -74,8 +74,8 @@
         gslb_server: '{{item.gslb_server}}'
         partition_name: '{{item.partition_name}}'
       loop: 
-          - {name: 'webtop.acme.com', gslb_server: '10.1.10.100', partition_name: 'webtop'}
-          - {name: 'ldap.f5lab.local', gslb_server: '10.1.20.104', partition_name: 'ldap'}
+          - {name: 'webtop.acme.com', gslb_server: 'bigip1.f5lab.local', partition_name: 'webtop'}
+          - {name: 'ldap.f5lab.local', gslb_server: 'bigip1.f5lab.local', partition_name: 'ldap'}
   
 
 
