@@ -1,0 +1,14 @@
+---
+# tasks file for creategslbvs
+
+- name: Enable virtual server
+  bigip_gtm_virtual_server:
+    server_name: '{{gslb_servername}}'
+    name: '{{gslb_vsname}}'
+    state: enabled
+    provider:
+      server: '{{bigip}}'
+      user: admin
+      password: admin
+      validate_certs: false
+  delegate_to: localhost

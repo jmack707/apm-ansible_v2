@@ -1,0 +1,19 @@
+---
+# tasks file for manageglsbpool
+
+- name: Add GTM pool members aggregate
+  bigip_gtm_pool_member:
+    pool: pool1
+    type: a
+    aggregate:
+      - server_name: server1
+        virtual_server: vs1
+        partition: Common
+        description: web server1
+        member_order: 0
+    provider:
+      server: '{{bigip}}'
+      user: admin
+      password: admin
+      validate_certs: false
+  delegate_to: localhost
