@@ -23,7 +23,7 @@
         webtop_address: "{{ scope_result }}"
     
     - debug:
-        msg: {{ scope_result }}
+          msg: {{ scope_result }}
 
     - name: GET BIGIP-1 AUTH Token
       include_role:
