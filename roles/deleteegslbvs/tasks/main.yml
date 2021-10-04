@@ -3,7 +3,7 @@
 
 - name: Delete GSLB Virtual Servers
   uri:
-    url: "https://{{ bigip }}/mgmt/tm/gtm/server/~Common~/{{gslb_server}}.f5lab.local/virtual-servers/~{{partition_name}}/{{name}}"
+    url: "https://{{ bigip }}/mgmt/tm/gtm/server/~Common~/{{gslb_server}}/virtual-servers/~{{partition_name}}/{{name}}"
     method: DELETE
     status_code: 200
     timeout: 300
