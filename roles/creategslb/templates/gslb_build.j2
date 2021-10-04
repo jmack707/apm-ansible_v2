@@ -49,6 +49,10 @@
             "class": "Application",
             "template": "shared",
             "bigip1.f5lab.local": {
+                "class": "GSLB_Server",
+                "dataCenter": {
+                    "bigip": "/Common/DC1"
+                },
 
                 "virtualServers": [
 {% for i in gslb %}
