@@ -1,0 +1,14 @@
+---
+# tasks file for deleteegslbvs
+
+- name: Delete GSLB Virtual Servers
+  uri:
+    url: "https://{{ bigip }}/mgmt/tm/gtm/server/~Common~bigip{{gslb_server}}.f5lab.local/virtual-servers/~{{partition_name}}/{{name}}"
+    method: DELETE
+    status_code: 200
+    timeout: 300
+    headers:
+      X-F5-Auth-Token: "{{ f5_auth_token }}"
+    validate_certs: false
+  delegate_to: localhost
+  
