@@ -100,7 +100,7 @@
 
     - name: Create DNS Wide IPs
       include_role:
-        name: creategslb2
+        name: creategslb3
       vars:
         bigip: 10.1.1.11
         gslb:
