@@ -64,7 +64,7 @@
         partition_name: webtop
         as3_template: shared
         app_service: webtop
-        bigip_address: '{{webtop_address}}'
+        bigip_address: 10.1.10.100
         body_template: as3_app_nopool
         bigip: 10.1.1.4
 
@@ -72,7 +72,7 @@
       include_role:
         name: createapp
       vars:
-        partition_name: demo
+        partition_name: LDAP
         app_service: LDAP
         bigip_address: 10.1.20.104
         body_template: as3_tcp_nomon_vs
@@ -93,9 +93,10 @@
         name: '{{item.name}}'
         port: '{{item.port}}'
         ipaddress: '{{item.ipaddress}}'
+        partition_name: '{{item.partition_name}}'
       loop: 
-          - {name: 'webtop.acme.com', port: '443', ipaddress: '10.1.10.100'}
-          - {name: 'ldap.f5lab.local', port: '389', ipaddress: '10.1.20.104'}
+          - {name: 'webtop.acme.com', port: '443', ipaddress: '10.1.10.100', partition_name: 'webtop'}
+          - {name: 'ldap.f5lab.local', port: '389', ipaddress: '10.1.20.104', partition_name: 'ldap'}
   
 
     - name: Create DNS Wide IPs
