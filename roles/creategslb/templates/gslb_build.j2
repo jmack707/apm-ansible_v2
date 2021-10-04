@@ -13,8 +13,11 @@
             "{{i.name}}": {
                 "class": "GSLB_Domain",
                 "domainName": "{{i.name}}",
-                "resourceRecordType": "A"
-            }
+                "resourceRecordType": "A",
+                
+            }{% if not loop.last %},
+{% endif %}{% endfor %}               
+        }
 
     
     }
