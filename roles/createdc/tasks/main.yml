@@ -1,0 +1,12 @@
+---
+# tasks file for createdc
+
+- name: Create data center 
+  bigip_gtm_datacenter:
+    name: "{{dc_name}}"
+    provider:
+      server: '{{bigip}}'
+      user: admin
+      password: admin
+      validate_certs: false
+  delegate_to: localhost

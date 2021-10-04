@@ -1,0 +1,14 @@
+- name: Create PUA LDAP Virtual Server and DNS
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars:
+    vs_name: pua
+    dns_name: pua.acme.com
+    path_name: apm
+    partition_name: demo
+    files_base: http://files-master.f5lab.local/solutions    
+
+
+
