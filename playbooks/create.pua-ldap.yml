@@ -91,8 +91,11 @@
       vars:
         bigip: 10.1.1.11
         name: '{{item.name}}'
+        port: '{{item.port}}'
+        ipaddress: '{{item.ipaddress}}'
       loop: 
-          - {name: 'webtop.acme.com', port: '443',ipaddress: '10.1.10.100'}
+          - {name: 'webtop.acme.com', port: '443', ipaddress: '10.1.10.100'}
+          - {name: 'LDAP.f5lab.local', port: '389', ipaddress: '10.1.10.104'}
   
 
     - name: Create DNS Wide IPs
