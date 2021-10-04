@@ -24,7 +24,7 @@
     
     - name: Print wetop address
       ansible.builtin.debug:
-        msg: {{ scope_result }}
+        msg: {{ webtop_address }}
 
     - name: GET BIGIP-1 AUTH Token
       include_role:
