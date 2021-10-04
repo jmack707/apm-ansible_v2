@@ -1,14 +1,15 @@
 ---
 # tasks file for creategslbvs
 
-- name: Enable virtual server
-  bigip_gtm_virtual_server:
-    server_name: '{{gslb_servername}}'
-    name: '{{gslb_vsname}}'
-    state: enabled
-    provider:
-      server: '{{bigip}}'
-      user: admin
-      password: admin
-      validate_certs: false
+- name: CREATE GSLB Virtual Servers
+  uri:
+    url: "https://{{ bigip }}/mgmt/tm/gtm/server/~Common~bigip1.f5lab.local/virtual-servers/"
+    method: POST
+    body: "{{ lookup('template','templates/gslbvs.j2', split_lines=False) }}"
+    timeout: 300
+    body_format: json
+    headers:
+      X-F5-Auth-Token: "{{ f5_auth_token }}"
+    validate_certs: false
   delegate_to: localhost
+  ignore_errors: true 

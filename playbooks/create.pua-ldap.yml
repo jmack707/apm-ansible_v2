@@ -85,9 +85,24 @@
       vars:
         bigip: 10.1.1.11        
 
+    - name: Create GSLB Virtual Servers
+      include_role:
+        name: creategslbvs
+      vars:
+        bigip: 10.1.1.11
+      loop: 
+          - name: webtop.acme.com
+            port: 443
+            ipaddress: 10.1.10.100
+          - name: LDAP.f5lab.local
+            port: 389
+            ipaddress: 10.1.20.104      
+
+
+
     - name: Create DNS Wide IPs
       include_role:
-        name: creategslb
+        name: creategslb2
       vars:
         bigip: 10.1.1.11
         gslb:

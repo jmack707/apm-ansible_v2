@@ -1,0 +1,23 @@
+{
+    "class": "ADC",
+    "schemaVersion": "3.6.0",
+    "id": "AS3-APPS-DC",
+
+    "{{vs_name}}": {
+        "class": "Tenant",
+        "Application": {
+            "class": "Application",
+            "template": "shared",
+
+{% for i in gslb %}
+            "{{i.name}}": {
+                "class": "GSLB_Domain",
+                "domainName": "{{i.name}}",
+                "resourceRecordType": "A"
+            }{% if not loop.last %},
+{% endif %}{% endfor %}               
+        }
+
+
+    }
+}  
