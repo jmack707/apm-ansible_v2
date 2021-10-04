@@ -12,6 +12,9 @@
     status_code: 200
   register: scopestate
 
+- debug:
+    msg: "{{scopestate}}"
+
 - name: List Single IP address in Scope
   set_fact: 
     scope_result: "{{scopestate.json | json_query(jmesquery)}}"
