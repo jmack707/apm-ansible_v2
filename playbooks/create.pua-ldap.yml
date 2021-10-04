@@ -64,7 +64,7 @@
         partition_name: webtop
         as3_template: shared
         app_service: webtop
-        bigip_address: 'webtop_address'
+        bigip_address: '{{webtop_address}}'
         body_template: as3_app_nopool
         bigip: 10.1.1.4
 
