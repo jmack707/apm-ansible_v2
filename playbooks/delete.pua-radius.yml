@@ -65,6 +65,18 @@
       vars:
         bigip: 10.1.1.11
 
+    - name: Delete GSLB Virtual Server
+      include_role:
+        name: deleteegslbvs
+      vars:
+        bigip: 10.1.1.11
+        name: '{{item.name}}'
+        gslb_server: '{{item.gslb_server}}'
+        partition_name: '{{item.partition_name}}'
+      loop: 
+          - {name: 'webtop.acme.com', gslb_server: 'bigip1.f5lab.local', partition_name: 'webtop'}
+          - {name: 'radius.f5lab.local', gslb_server: 'bigip1.f5lab.local', partition_name: 'radius'}
+ 
     - name: Run DELETEAPP Role BIGIP-5
       include_role:
         name: deleteapp

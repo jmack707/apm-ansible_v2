@@ -77,8 +77,6 @@
           - {name: 'webtop.acme.com', gslb_server: 'bigip1.f5lab.local', partition_name: 'webtop'}
           - {name: 'ldap.f5lab.local', gslb_server: 'bigip1.f5lab.local', partition_name: 'ldap'}
   
-
-
     - name: Run DELETEAPP Role BIGIP-5
       include_role:
         name: deleteapp
