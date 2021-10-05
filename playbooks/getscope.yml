@@ -1,0 +1,10 @@
+- name: Create PUA LDAP Virtual Server and DNS
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: Get Scope
+      include_role:
+        name: getdhcpscope
+
