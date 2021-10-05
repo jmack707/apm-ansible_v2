@@ -50,6 +50,13 @@
         path_name: Shared
         bigip: 10.1.1.4
 
+    - name: Import CA Cert
+      include_role: 
+        name: importcerts
+      vars:
+        cert_name: ca.f5lab.local.crt
+        bigip: 10.1.1.4
+
     - name: Create PUA Webtop
       include_role:
         name: createapp
@@ -78,9 +85,22 @@
       vars:
         bigip: 10.1.1.11        
 
+    - name: Create GSLB Virtual Servers
+      include_role:
+        name: creategslbvs
+      vars:
+        bigip: 10.1.1.11
+        name: '{{item.name}}'
+        port: '{{item.port}}'
+        ipaddress: '{{item.ipaddress}}'
+        partition_name: '{{item.partition_name}}'
+      loop: 
+          - {name: 'webtop.acme.com', port: '443', ipaddress: '{{webtop_address}}', partition_name: 'webtop'}
+          - {name: 'ldap.f5lab.local', port: '389', ipaddress: '10.1.20.104', partition_name: 'ldap'}
+  
     - name: Create DNS Wide IPs
       include_role:
-        name: creategslb
+        name: creategslb3
       vars:
         bigip: 10.1.1.11
         gslb:
