@@ -6,7 +6,7 @@
   tasks:
     - name: Get Scope
       include_role:
-        name: getdhcpscop 
+        name: getdhcpscope 
 
 
 
