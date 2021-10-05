@@ -96,7 +96,7 @@
         partition_name: '{{item.partition_name}}'
       loop: 
           - {name: 'webtop.acme.com', port: '443', ipaddress: '{{webtop_address}}', partition_name: 'webtop'}
-          - {name: 'ldap.f5lab.local', port: '389', ipaddress: '10.1.20.104', partition_name: 'ldap'}
+          - {name: 'radius.f5lab.local', port: '1812', ipaddress: '10.1.20.104', partition_name: 'radius'}
   
     - name: Create DNS Wide IPs
       include_role:
