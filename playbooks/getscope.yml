@@ -6,7 +6,9 @@
   tasks:
     - name: Get Scope
       include_role:
-        name: getdhcpscope 
-
+        name: nextdhcpaddr
+      vars:
+        vs_name: webtop_address
+        dhcp_scope: 10.1.10.96
 
 
