@@ -23,8 +23,8 @@
     headers:
       Content-Type: application/json
     body:
-      username: "{{ provider.user }}"
-      password: "{{ provider.password }}"
+      username: "{{ ansible_user}}"
+      password: "{{ ansible_ssh_pass }}"
     body_format: json
     status_code: 404, 200
   loop: "{{ scope_result }}"
