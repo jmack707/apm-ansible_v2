@@ -1,5 +1,5 @@
 - name: Get DHCP Scope
-  hosts: bigips
+  hosts: localhost
   serial: 1
   connection: local
   gather_facts: no
