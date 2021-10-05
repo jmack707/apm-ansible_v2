@@ -12,17 +12,22 @@
     status_code: 200
   register: scopestate
 
+- debug:
+    msg: "{{scopestate}}"
+
 - name: List Single IP address in Scope
   set_fact: 
     scope_result: "{{scopestate.json | json_query(jmesquery)}}"
   vars:
-    jmesquery: "IPAddress.IPAddressToString"
+    jmesquery: 'IPAddress.IPAddressToString'
+  when: "scopestate.json.IPAddress.IPAddressToString is defined and scopestate.json.Description == '{{vs_name}}'"
 
 - name: List Mutiple IP addresses in Scope
   set_fact: 
     scope_result: "{{scopestate.json | json_query(jmesquery)}}"
   vars:
     jmesquery: "[? Description == '{{vs_name}}'].IPAddress.IPAddressToString"
+  when: "scopestate.json.IPAddress.IPAddressToString is undefined and scopestate.json.status is undefined"
   ignore_errors: true
 
 - debug:
