@@ -12,6 +12,4 @@ iis ansible_host=10.1.20.6
 bigip1
 dns1
 
-[all:vars]
-ansible_user = "admin"
-ansible_ssh_pass = "admin"
+
